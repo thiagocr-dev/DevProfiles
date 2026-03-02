@@ -2,7 +2,6 @@ import './global.css'
 import { Route, Routes } from 'react-router'
 import Layout from './layouts/layout'
 import Home from './pages/Home'
-import DevProfile from './pages/DevProfile'
 import CreateProfile from './pages/CreateProfile'
 import Profile from './pages/Profile'
 import { DevelopersProvider } from './context/DevelopersContext'
@@ -14,7 +13,6 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
           <Route path='/dev/crear' element={<CreateProfile />} />
-          <Route path='/dev/:username' element={<DevProfile/>} />
           <Route path='/profile/:id' element={<Profile />} />
           <Route path='*' element={<h1>404 - Página no encontrada</h1>} />
         </Route>

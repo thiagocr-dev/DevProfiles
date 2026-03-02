@@ -17,7 +17,11 @@
 
 .card:hover{
     transform: translateY(-8px);
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255,10.08);
+}
+
+@media (min-width:300px) and (max-width: 420px) {
+    .cards-container .card {padding-bottom: 16px;}
 }
 
 .avatar{
@@ -71,7 +75,6 @@
     .card {
         padding: 12px;
         white-space: normal;
-        /* expand to fill available space */
         flex: 1 1 100%;
         width: 100%;
     }

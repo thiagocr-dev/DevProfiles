@@ -1,7 +1,14 @@
 .create-profile__container {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 28px auto;
     padding: 20px;
+}
+
+@media (min-width:300px) and (max-width: 600px) { 
+    .create-profile__container{
+        margin: 20px auto;
+        padding: 0px;
+    }
 }
 
 .create-profile__container h1 {
@@ -24,7 +31,7 @@
 
 .form-group label {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     color: #e2e8f0;
 }
 
@@ -71,12 +78,12 @@
     transform: translateY(0);
 }
 
-/* Estilos para agrupación de tecnologías */
 .tech-input-group {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     margin-bottom: 12px;
 }
 

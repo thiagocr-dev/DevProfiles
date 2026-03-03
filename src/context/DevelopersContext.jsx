@@ -1,17 +1,14 @@
 import { createContext, useContext, useState } from 'react'
 import developers from '../data/developers'
 
-// crear el contexto
 const DevelopersContext = createContext()
 
-// proveedor del contexto
 export function DevelopersProvider({ children }) {
     const [devs, setDevs] = useState(developers)
 
     const addDeveloper = (name, role, techs, cv, avatar, metrics) => {
         const nextId = devs.length > 0 ? Math.max(...devs.map(d => d.id)) + 1 : 1
         
-        // Verificar si techs es un array (con niveles) o un string
         let techArray = Array.isArray(techs) 
             ? techs 
             : techs
@@ -53,7 +50,6 @@ export function DevelopersProvider({ children }) {
     )
 }
 
-// hook personalizado para usar el contexto
 export function useDevelopers() {
     const context = useContext(DevelopersContext)
     if (!context) {

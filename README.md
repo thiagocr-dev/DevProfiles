@@ -1,16 +1,122 @@
-# React + Vite
+💻 Developer Profiles App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada en React que permite visualizar y crear perfiles de desarrolladores, mostrando información profesional, stack tecnológico y estadísticas dinámicas.
 
-Currently, two official plugins are available:
+Proyecto realizado como trabajo integrador para la materia de desarrollo frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+🚀 Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📋 Listado dinámico de desarrolladores
+- 👤 Vista individual de perfil ("/profile/:id")
+- ➕ Creación de nuevos perfiles mediante formulario
+- 📊 Visualización de métricas y stack tecnológico
+- 🧠 Manejo de estado global con DeveloperContext
+- 🛣 Enrutamiento con React Router DOM
+- 📱 Diseño totalmente responsive (320px – 2000px)
+- ✅ Validaciones básicas en formulario
+- 🆔 Generación dinámica de IDs
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠 Tecnologías utilizadas
+
+- React
+- React Router DOM
+- Context API
+- CSS
+- JavaScript (ES6+)
+- Vite
+
+---
+
+📂 Estructura del proyecto
+
+src/
+ ├── components/
+ ├── context/
+ ├── data/
+ ├── pages/
+ ├── App.jsx
+ └── global.css
+ └── main.jsx
+
+La aplicación está organizada de forma modular siguiendo principios de buenas prácticas (DRY, KISS).
+
+---
+
+📊 Manejo de Estado
+
+Se utiliza Context API para mantener un estado global de perfiles, permitiendo:
+
+- Agregar nuevos desarrolladores
+- Visualizarlos automáticamente en Home
+- Acceder dinámicamente a cada perfil mediante parámetros de URL
+
+---
+
+🧪 Validaciones implementadas
+
+El formulario de creación de perfil incluye validaciones básicas:
+
+- Nombre obligatorio
+- Rol obligatorio
+- Al menos una tecnología
+- Experiencia no negativa
+- Nivel de inglés obligatorio
+
+---
+
+📱 Responsive Design
+
+La aplicación fue desarrollada con enfoque mobile-first y funciona correctamente desde:
+
+- 320px (mobile)
+- Tablet
+- Desktop
+- Pantallas grandes
+
+---
+
+🌐 Deploy
+
+La aplicación se encuentra desplegada en Vercel:
+
+🔗 https://dev-profiles-gamma.vercel.app/
+
+---
+
+📦 Instalación y ejecución local
+
+1. Clonar el repositorio
+
+git clone https://github.com/tu-usuario/tu-repo.git
+
+2. Instalar dependencias
+
+npm install
+
+3. Ejecutar en entorno de desarrollo
+
+npm run dev
+
+---
+
+📚 Aprendizajes
+
+Durante el desarrollo se trabajó en:
+
+- Organización de componentes
+- Manejo de estado global
+- Enrutamiento dinámico
+- Validaciones en formularios
+- Buenas prácticas de desarrollo
+
+---
+
+👨‍💻 Autor
+
+Thiago Colombo Russell
+
+---

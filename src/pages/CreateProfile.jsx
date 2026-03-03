@@ -98,7 +98,7 @@ function CreateProfile() {
                     <input
                         id="name"
                         type="text"
-                        placeholder="Ej: Juan Pérez"
+                        placeholder="Ej: Pepe Gómez"
                         value={newName}
                         onChange={e => setNewName(e.target.value)}
                         required

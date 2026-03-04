@@ -37,6 +37,7 @@ src/
  ├── components/
  ├── context/
  ├── data/
+ ├── layouts/
  ├── pages/
  ├── App.jsx
  └── global.css

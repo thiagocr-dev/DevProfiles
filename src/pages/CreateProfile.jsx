@@ -1,21 +1,49 @@
 import React, { useState } from 'react'
 import { useDevelopers } from '../context/DevelopersContext'
+import { useNavigate } from 'react-router'
 import './CreateProfile.css'
 
 function CreateProfile() {
     const { addDeveloper } = useDevelopers()
-    
+    const navigate = useNavigate()
+
     const [newName, setNewName] = useState("")
     const [newRole, setNewRole] = useState("")
     const [techs, setTechs] = useState([])
     const [techName, setTechName] = useState("")
     const [techLevel, setTechLevel] = useState(50)
     const [newCv, setNewCv] = useState("")
+    const [cvFileName, setCvFileName] = useState("")
     const [newAvatar, setNewAvatar] = useState("")
+    const [avatarFileName, setAvatarFileName] = useState("")
     const [experienceYears, setExperienceYears] = useState(0)
     const [projectsCompleted, setProjectsCompleted] = useState(0)
     const [repositories, setRepositories] = useState(0)
     const [englishLevel, setEnglishLevel] = useState("Básico")
+
+    const handleImageUpload = (e) => {
+        const file = e.target.files[0]
+        if (file) {
+            setAvatarFileName(file.name)
+            const reader = new FileReader()
+            reader.onloadend = () => {
+                setNewAvatar(reader.result)
+            }
+            reader.readAsDataURL(file)
+        }
+    }
+
+    const handleCvUpload = (e) => {
+        const file = e.target.files[0]
+        if (file) {
+            setCvFileName(file.name)
+            const reader = new FileReader()
+            reader.onloadend = () => {
+                setNewCv(reader.result)
+            }
+            reader.readAsDataURL(file)
+        }
+    }
 
     const handleAddTech = () => {
         if (techName.trim()) {
@@ -31,7 +59,7 @@ function CreateProfile() {
 
     const handleAddDeveloper = (e) => {
         e.preventDefault()
-        
+
         if (!newName.trim() || !newRole.trim()) {
             alert("Por favor completa el nombre y el rol")
             return
@@ -42,28 +70,28 @@ function CreateProfile() {
             return
         }
 
-        if(experienceYears < 0){
+        if (experienceYears < 0) {
             alert("Por favor ingrese una experiencia válida");
             return;
         }
-        if(completedProjects < 0){
+        if (projectsCompleted < 0) {
             alert("Por favor ingrese una cantidad válida de proyectos completados");
             return;
         }
-        if(repositories < 0){
+        if (repositories < 0) {
             alert("Por favor ingrese una cantidad válida de repositorios");
             return;
         }
-        if(!englishLevel){
+        if (!englishLevel) {
             alert("Por favor selecciona un nivel de inglés válido");
             return;
         }
-        
+
         addDeveloper(
-            newName, 
-            newRole, 
-            techs, 
-            newCv, 
+            newName,
+            newRole,
+            techs,
+            newCv,
             newAvatar,
             {
                 experience_years: parseInt(experienceYears),
@@ -72,26 +100,29 @@ function CreateProfile() {
                 english_level: englishLevel
             }
         )
-        
+
         setNewName("")
         setNewRole("")
         setTechs([])
         setTechName("")
         setTechLevel(50)
         setNewCv("")
+        setCvFileName("")
         setNewAvatar("")
+        setAvatarFileName("")
         setExperienceYears(0)
         setProjectsCompleted(0)
         setRepositories(0)
         setEnglishLevel("Básico")
-        
+
         alert("Desarrollador agregado exitosamente")
+        navigate("/")
     }
 
     return (
         <div className="create-profile__container">
             <h1>Crear nuevo perfil de desarrollador</h1>
-            
+
             <form className="create-form" onSubmit={handleAddDeveloper}>
                 <div className="form-group">
                     <label htmlFor="name">Nombre completo *</label>
@@ -161,30 +192,50 @@ function CreateProfile() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="avatar">URL del Avatar</label>
-                    <input
-                        id="avatar"
-                        type="text"
-                        placeholder="https://example.com/avatar.jpg"
-                        value={newAvatar}
-                        onChange={e => setNewAvatar(e.target.value)}
-                    />
+                    <label htmlFor="avatar">Foto de Perfil (Avatar)</label>
+                    <div className="file-input-container">
+                        <input
+                            id="avatar"
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="file-input"
+                        />
+                        <button
+                            type="button"
+                            className="upload-btn"
+                            onClick={() => document.getElementById('avatar').click()}
+                        >
+                            Subir imagen local
+                        </button>
+                        {avatarFileName && <span className="file-name">{avatarFileName}</span>}
+                    </div>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="cv">URL del CV</label>
-                    <input
-                        id="cv"
-                        type="text"
-                        placeholder="Ej: /cv-juan.pdf"
-                        value={newCv}
-                        onChange={e => setNewCv(e.target.value)}
-                    />
+                    <label htmlFor="cv">CV en formato PDF (opcional)</label>
+                    <div className="file-input-container">
+                        <input
+                            id="cv"
+                            type="file"
+                            accept=".pdf,application/pdf"
+                            onChange={handleCvUpload}
+                            className="file-input"
+                        />
+                        <button
+                            type="button"
+                            className="upload-btn"
+                            onClick={() => document.getElementById('cv').click()}
+                        >
+                            Subir CV local
+                        </button>
+                        {cvFileName && <span className="file-name">{cvFileName}</span>}
+                    </div>
                 </div>
 
                 <fieldset className="metrics-fieldset">
                     <legend>Métricas del Desarrollador</legend>
-                    
+
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="experience">Años de Experiencia</label>

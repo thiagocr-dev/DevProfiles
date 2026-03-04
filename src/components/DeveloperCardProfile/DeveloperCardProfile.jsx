@@ -3,7 +3,7 @@ import { useState } from 'react'
 import TechBadge from '../TechBadge/TechBadge'
 
 
-function DeveloperCardProfile({developer}) {
+function DeveloperCardProfile({ developer }) {
     const [isDownloaded, setIsDownloaded] = useState(false)
 
     const handleDownloadCV = () => {
@@ -20,24 +20,25 @@ function DeveloperCardProfile({developer}) {
 
     return (
         <div className="card__profile">
-            <img 
-                src={developer.avatar} 
-                alt={developer.name} 
+            <img
+                src={developer.avatar}
+                alt={developer.name}
                 className="avatar"
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://via.placeholder.com/80" }}
             />
             <h3 className="name">{developer.name}</h3>
             <p className='role'>{developer.role}</p>
-                    
+
             <div className="tech-badges">
                 {developer.tech.map((tech, index) => (
                     <TechBadge key={index} tech={tech} />
                 ))}
             </div>
-            <button 
+            <button
                 onClick={handleDownloadCV}
                 className={`cv-btn ${isDownloaded ? 'cv-btn--downloaded' : ''}`}>
                 {isDownloaded ? '✓ Descargado' : 'Descargar CV'}
-            </button>    
+            </button>
         </div>
     )
 }

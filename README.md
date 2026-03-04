@@ -68,6 +68,24 @@ El formulario de creación de perfil incluye validaciones básicas:
 
 ---
 
+🔐 Autenticación
+El proyecto incluye un sistema de login simple implementado en el frontend utilizando estado global (Context API).
+
+⚠️ No cuenta con backend ni base de datos.
+Las credenciales están simuladas para fines académicos.
+
+👤 Credenciales de prueba
+Usuario: admin
+Contraseña: 1234
+
+✅ Funcionalidades del Login
+- Validación básica de campos
+- Manejo de errores
+- Redirección automática tras autenticación
+- Protección de rutas 
+
+---
+
 📱 Responsive Design
 
 La aplicación fue desarrollada con enfoque mobile-first y funciona correctamente desde:

@@ -19,7 +19,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/' element={<Home />} />
             <Route path='/dev/crear' element={<ProtectedRoute> <CreateProfile/> </ProtectedRoute>} />
-            <Route path='/profile/:id' element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
+            <Route path='/profile/:id' element={<Profile />} />
             <Route path='*' element={<h1>404 - Página no encontrada</h1>} />
           </Route>
         </Routes>

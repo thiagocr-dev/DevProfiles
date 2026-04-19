@@ -1,0 +1,38 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.badge:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.badge svg {
+    font-size: 16px;
+}
+
+/* Colores Específicos por Tecnología */
+.badge.tech-react { color: #06b6d4; border-color: rgba(6,182,212,0.2); }
+.badge.tech-react svg { filter: drop-shadow(0 0 4px rgba(6,182,212,0.6)); }
+
+.badge.tech-javascript { color: #facc15; border-color: rgba(250,204,21,0.2); }
+.badge.tech-css { color: #3b82f6; border-color: rgba(59,130,246,0.2); }
+.badge.tech-html { color: #f97316; border-color: rgba(249,115,22,0.2); }
+.badge.tech-angular { color: #ef4444; border-color: rgba(239,68,68,0.2); }
+.badge.tech-vue { color: #10b981; border-color: rgba(16,185,129,0.2); }
+.badge.tech-node\.js { color: #22c55e; border-color: rgba(34,197,94,0.2); }
+.badge.tech-python { color: #eab308; border-color: rgba(234,179,8,0.2); }
+.badge.tech-typescript { color: #3b82f6; border-color: rgba(59,130,246,0.2); }
+.badge.tech-express { color: #94a3b8; border-color: rgba(148,163,184,0.2); }
+.badge.tech-mongodb { color: #22c55e; border-color: rgba(34,197,94,0.2); }
+.badge.tech-c\+\+ { color: #0ea5e9; border-color: rgba(14,165,233,0.2); }
+.badge.tech-php { color: #8b5cf6; border-color: rgba(139,92,246,0.2); }
+.badge.tech-swift { color: #f97316; border-color: rgba(249,115,22,0.2); }

@@ -31,10 +31,15 @@ const iconMap = {
 }
 
 
+import './TechBadge.css';
+
 function TechBadge({tech}){
+    // Create a safe CSS class name (e.g. "Node.js" -> "node.js", "C++" -> "c++")
+    const techClass = `tech-${tech.name.toLowerCase()}`;
+    
     return (
-        <span className="badge">
-            {iconMap[tech.name]} {tech.name}
+        <span className={`badge ${techClass}`}>
+            {iconMap[tech.name]} <span>{tech.name}</span>
         </span>
     )
 }

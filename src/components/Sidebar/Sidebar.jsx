@@ -4,13 +4,19 @@ import './Sidebar.css'
 function Sidebar() {
     return (
         <aside className='sidebar'>
-            <NavLink className="sidebar__link" to='/' >
-                Home
-            </NavLink>
+            <div className="sidebar__logo-container">
+                <h1 className="sidebar__logo">DevProfiles</h1>
+            </div>
+            
+            <nav className="sidebar__nav">
+                <NavLink className="sidebar__link" to='/' >
+                    Home
+                </NavLink>
 
-            <NavLink className="sidebar__link" to='/dev/crear' >
-                Crear Perfil
-            </NavLink>
+                <NavLink className="sidebar__link" to='/dev/crear' >
+                    Crear Perfil
+                </NavLink>
+            </nav>
         </aside>
     )
 }

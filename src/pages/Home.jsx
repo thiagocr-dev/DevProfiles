@@ -1,5 +1,6 @@
 import "./Home.css"
 import { useState } from "react"
+import { FiSearch, FiFilter } from "react-icons/fi"
 import DeveloperCard from "../components/DeveloperCard/DeveloperCard"
 import { useDevelopers } from "../context/DevelopersContext"
 
@@ -38,28 +39,46 @@ function Home({profiles}){
                 <p className="subtitle">Explora perfiles y conecta con talento tech</p>
             </section>
             
-            <input 
-                type="text"
-                placeholder="Buscar desarrollador..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="search-input"
-            />
+            <div className="search-container">
+                <FiSearch className="search-icon" />
+                <input 
+                    type="text"
+                    placeholder="Buscar desarrollador..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="search-input"
+                />
+            </div>
 
-            <div className="tech-filter">
-                <label htmlFor="tech-select" className="tech-filter-label">
-                    Filtrar por tecnología:
-                </label>
-                <select
-                    id="tech-select"
-                    value={selectedTech}
-                    onChange={e => setSelectedTech(e.target.value)}
-                    className="tech-filter-select"
-                >
-                    {allTechs.map((tech, index) => (
-                        <option key={index} value={tech}>{tech}</option>
-                    ))}
-                </select>
+            <div className="tech-filter-container">
+                <div className="tech-filter">
+                    <label htmlFor="tech-select" className="tech-filter-label">
+                        <FiFilter className="filter-icon" /> Filtrar por tecnología
+                    </label>
+                    <div className="filter-controls">
+                        <select
+                            id="tech-select"
+                            value={selectedTech}
+                            onChange={e => setSelectedTech(e.target.value)}
+                            className="tech-filter-select"
+                        >
+                            {allTechs.map((tech, index) => (
+                                <option key={index} value={tech}>{tech}</option>
+                            ))}
+                        </select>
+                        <div className="filter-pills">
+                            {["React", "Node.js", "Python", "Seniority", "Location"].map((pill, idx) => (
+                                <button 
+                                    key={idx} 
+                                    className={`filter-pill ${selectedTech === pill ? 'active' : ''}`}
+                                    onClick={() => setSelectedTech(pill)}
+                                >
+                                    [{pill}]
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
             
                 <div className="cards-container">

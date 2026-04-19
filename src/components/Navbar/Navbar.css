@@ -45,7 +45,13 @@
 }
 
 @media (max-width: 768px) {
-    .navbar__icons{
+    .navbar__icons {
         display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar {
+        display: none;
     }
 }

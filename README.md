@@ -1,12 +1,15 @@
-# 🚀 DevProfiles — Premium Developer Showcase
+# 🚀 DevProfiles 
+## Demo en vivo
+https://dev-profiles-gamma.vercel.app/
+
+
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**DevProfiles** es una plataforma moderna y sofisticada diseñada para que desarrolladores muestren su talento con una estética premium. Combina un diseño visual impactante con funcionalidades prácticas como la generación automática de CVs profesionales en PDF.
-
+**Objetivo** es una plataforma moderna y sofisticada diseñada para que desarrolladores muestren su talento con una estética premium. Combina un diseño visual impactante con funcionalidades prácticas como la generación automática de CVs profesionales en PDF.
 ---
 
 ## ✨ Características Principales
@@ -51,6 +54,16 @@ src/
  ├── layouts/       # Estructuras de página envolventes
  └── pages/         # Vistas principales (Home, Profile, CreateProfile, Login)
 ```
+
+## 📸 Preview
+
+![Home Preview](screenshots/image-3.png)
+![Profile Preview](screenshots/image-5.png)
+![Create Profile Preview](screenshots/image-2.png)
+![Login Preview](screenshots/image-4.png)
+
+*Explora perfiles y conecta con talento tech*
+
 
 ---
 
@@ -98,12 +111,9 @@ Para probar las funcionalidades de edición y creación, utiliza las siguientes 
 ## 👨‍💻 Autor
 
 **Thiago Colombo Russell**
--   LinkedIn: [thiagocr-dev](https://linkedin.com/in/thiagocr-dev)
--   GitHub: [@thiagocr-dev](https://github.com/thiagocr-dev)
+-   LinkedIn: [thiago-russell](https://linkedin.com/in/thiago-russell)
+-   GitHub: [thiagocr-dev](https://github.com/thiagocr-dev)
 
 ---
 
-<p align="center">
-  Desarrollado con ❤️ para la comunidad de desarrolladores.
-</p>
-
+Desarrollado con ❤️ para la comunidad tech.

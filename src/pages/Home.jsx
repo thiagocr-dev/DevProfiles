@@ -67,7 +67,7 @@ function Home({profiles}){
                             ))}
                         </select>
                         <div className="filter-pills">
-                            {["React", "Node.js", "Python", "Seniority", "Location"].map((pill, idx) => (
+                            {["React", "Node.js", "Python"].map((pill, idx) => (
                                 <button 
                                     key={idx} 
                                     className={`filter-pill ${selectedTech === pill ? 'active' : ''}`}
